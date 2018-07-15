@@ -4,7 +4,8 @@ const devConfig = require('./webpack.dev');
 const prodConfig = require('./webpack.prod');
 const serverConfig = require('./webpack.server');
 
-require('dotenv').config();
+require('dotenv')
+  .config();
 
 const PATHS = {
   app: path.join(__dirname, '../src'),
@@ -39,11 +40,12 @@ const commonConfig = {
 };
 
 module.exports = () => {
-  if (process.env.NODE_ENV === 'production') {
-    return merge(commonConfig, prodConfig(PATHS, TITLE));
-  } else if (process.env.NODE_ENV === 'server') {
-    return merge(commonConfig, serverConfig(PATHS));
+  switch (process.env.NODE_ENV) {
+    case 'production':
+      return merge(commonConfig, prodConfig(PATHS, TITLE));
+    case 'server':
+      return merge(commonConfig, serverConfig(PATHS));
+    default:
+      return merge(commonConfig, devConfig(PATHS, TITLE));
   }
-
-  return merge(commonConfig, devConfig(PATHS, TITLE));
 };
