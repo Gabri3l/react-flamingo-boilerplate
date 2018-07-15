@@ -27,7 +27,9 @@
     ],
     "operator-linebreak": [2, "before", { "overrides": { "=": "after" } }],
     "newline-per-chained-call": [2, { "ignoreChainWithDepth": 2 }],
-    "arrow-body-style": [2, "as-needed"]
+    "arrow-body-style": [2, "as-needed"],
+    "jsx-a11y/href-no-hash": "off",
+    "jsx-a11y/anchor-is-valid": ["warn", { "aspects": ["invalidHref"] }]
   },
   "settings": {
     "import/resolver": {
