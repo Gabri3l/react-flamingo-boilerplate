@@ -27,9 +27,18 @@ class MainContainer extends Component {
   render() {
     const { coinPrice, fetchError, isFetching } = this.props;
 
-    if (isFetching) return <div>Fetching data...</div>;
-    if (fetchError) return <div>Something went wrong</div>;
-    return <div>Right now the price of LTC is ${coinPrice}</div>;
+    if (isFetching) {
+      return <div>Fetching data...</div>;
+    }
+    if (fetchError) {
+      return <div>Something went wrong</div>;
+    }
+    return (
+      <div>
+        Right now the price of LTC is $
+        {coinPrice}
+      </div>
+    );
   }
 }
 

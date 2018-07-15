@@ -27,16 +27,7 @@
     ],
     "operator-linebreak": [2, "before", { "overrides": { "=": "after" } }],
     "newline-per-chained-call": [2, { "ignoreChainWithDepth": 2 }],
-    "arrow-body-style": [2, "as-needed"],
-    "max-len": [
-      2,
-      {
-        "code": 80,
-        "ignoreUrls": true,
-        "ignoreTemplateLiterals": false,
-        "ignoreComments": false
-      }
-    ]
+    "arrow-body-style": [2, "as-needed"]
   },
   "settings": {
     "import/resolver": {
