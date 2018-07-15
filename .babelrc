@@ -1,0 +1,29 @@
+{
+  "presets": [
+    "@babel/react",
+    [
+      "@babel/env",
+      {
+        "targets": {
+          "browsers": "> 1%, last 2 versions"
+        },
+        "loose": true,
+        "modules": false
+      }
+    ]
+  ],
+  "plugins": [
+    "@babel/plugin-syntax-dynamic-import",
+    "@babel/plugin-proposal-class-properties",
+    "@react-firenze/react-loadable/babel"
+  ],
+  "env": {
+    "test": {
+      "presets": ["@babel/react"],
+      "plugins": ["transform-es2015-modules-commonjs"]
+    },
+    "server": {
+      "plugins": ["transform-es2015-modules-commonjs"]
+    }
+  }
+}

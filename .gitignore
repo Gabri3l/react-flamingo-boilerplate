@@ -1,0 +1,8 @@
+/node_modules
+/public
+/dist/*.*
+stats.json
+.env
+server/react-loadable.json
+/.vscode
+yarn-error.log
