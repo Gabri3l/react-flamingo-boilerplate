@@ -24,15 +24,15 @@ import reducers from '../src/reducers/index';
 envVars.config();
 
 const port = process.env.PORT || 3000;
-const baseTemplate = fs.readFileSync('./public/index.html');
+const baseTemplate = fs.readFileSync('./dist/public/index.html');
 const template = _.template(baseTemplate);
 const server = express();
 const store = createStore(reducers, applyMiddleware(slimAsync));
 
 server.use(compression());
-server.use('/public', express.static('./public'));
-server.use('/js', express.static('./public/js'));
-server.use('/images', express.static('./public/images'));
+server.use('/public', express.static('../public'));
+server.use('/js', express.static('../public/js'));
+server.use('/images', express.static('../public/images'));
 
 server.use((req, res) => {
   const modules = [];

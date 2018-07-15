@@ -14,7 +14,7 @@ const PATHS = {
   app: join('../src'),
   dist: join('../dist'),
   client: join('../src'),
-  public: join('../public'),
+  public: join('../dist/public'),
   server: join('../server'),
 };
 const TITLE = 'React Flamingo Boilerplate';

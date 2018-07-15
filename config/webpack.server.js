@@ -10,8 +10,8 @@ module.exports = (PATHS) => merge([
     target: 'node',
     devtool: false,
     output: {
-      path: PATHS.dist,
-      filename: 'server.js',
+      path: path.join(PATHS.dist, '/server'),
+      filename: 'main.js',
     },
     externals: [nodeExternals()],
   },
