@@ -1,6 +1,5 @@
 /* eslint import/no-extraneous-dependencies: 0 */
 const path = require('path');
-const webpack = require('webpack');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const NyanProgressPlugin = require('nyan-progress-webpack-plugin');
 const OpenBrowserPlugin = require('open-browser-webpack-plugin');
@@ -13,6 +12,7 @@ const HOST = 'localhost';
 module.exports = (PATHS, TITLE) => merge([
   {
     devtool: 'cheap-module-source-map',
+    mode: 'development',
     output: {
       path: path.join(__dirname, 'js'),
       filename: '[name].js',
@@ -22,7 +22,6 @@ module.exports = (PATHS, TITLE) => merge([
     plugins: [
       new FriendlyErrorsWebpackPlugin(),
       new NyanProgressPlugin(),
-      new webpack.NamedModulesPlugin(),
       new OpenBrowserPlugin({ url: `http://${HOST}:${PORT}` }),
     ],
   },

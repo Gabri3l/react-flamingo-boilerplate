@@ -36,10 +36,20 @@ exports.devServer = ({
   },
 });
 
-exports.extractBundles = (bundles) => ({
-  plugins: bundles.map(
-    (bundle) => new webpack.optimize.CommonsChunkPlugin(bundle),
-  ),
+exports.extractCommonsChunk = () => ({
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'commons',
+          enforce: true,
+          minChunks: 2,
+          chunks: 'all',
+        },
+      },
+    },
+  },
 });
 
 exports.hotModuleRelaod = ({ host, port, entry }) => {
@@ -107,19 +117,11 @@ exports.lintJavaScript = ({ include, exclude = /node_modules/, options }) => ({
   },
 });
 
-function injectScriptTag(filename) {
-  return filename
-    ? `<script type="text/javascript" src="/js/${filename}.js"></script>`
-    : '';
-}
-
 exports.loadHtmlTemplate = ({
   filename,
   template,
   appId,
   title,
-  vendorsChunkFilename = null,
-  manifestChunkFilename = null,
   mainChunkFilename = 'main',
   injectState = false,
   injectStyle = false,
@@ -133,9 +135,7 @@ exports.loadHtmlTemplate = ({
       inject: false,
       body: `<div id="${appId}"><%= body %></div>`,
       bundles: injectChunkBundles ? '<%= bundles %>' : '',
-      manifestChunk: injectScriptTag(manifestChunkFilename),
-      mainChunk: injectScriptTag(mainChunkFilename),
-      vendorsChunk: injectScriptTag(vendorsChunkFilename),
+      mainChunk: `<script type="text/javascript" src="/js/${mainChunkFilename}.js"></script>`,
       rehydrateCss: injectStyle
         ? '<script>window._emotion = <%= ids %>;</script>'
         : '',
@@ -186,26 +186,15 @@ exports.loadImages = (
   },
 });
 
-exports.minifyJavascript = () => ({
-  plugins: [
-    new UglifyJsPlugin(
-      {},
-      {
-        cache: true,
-        parallel: true,
-        extraComments: false,
-        sourceMap: false,
-        uglifyOptions: {
-          ie8: false,
-          compress: {
-            conditionals: true,
-            dead_code: true,
-            evaluate: true,
-          },
-        },
-      },
-    ),
-  ],
+exports.speedUpMinification = (shouldSpeedUp) => ({
+  optimization: {
+    minimizer: [
+      new UglifyJsPlugin({
+        cache: shouldSpeedUp,
+        parallel: shouldSpeedUp,
+      }),
+    ],
+  },
 });
 
 exports.setEnvVariables = (vars = {}) => ({

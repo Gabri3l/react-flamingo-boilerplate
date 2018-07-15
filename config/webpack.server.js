@@ -6,6 +6,7 @@ const parts = require('./webpack.parts');
 module.exports = (PATHS) => merge([
   {
     entry: path.join(PATHS.server, '/server.js'),
+    mode: 'production',
     target: 'node',
     devtool: false,
     output: {

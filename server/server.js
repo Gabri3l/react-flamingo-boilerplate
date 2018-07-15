@@ -48,43 +48,46 @@ server.use((req, res) => {
 
   if (context.url) res.redirect(context.url);
 
-  Promise.all(promises).then(() => {
-    const { html: body, css, ids } = extractCritical(
-      ReactDOMServer.renderToString(
-        <Loadable.Capture report={(moduleName) => modules.push(moduleName)}>
-          <Provider store={store}>
-            <StaticRouter context={context} location={req.url}>
-              {renderRoutes(routes)}
-            </StaticRouter>
-          </Provider>
-        </Loadable.Capture>,
-      ),
-    );
+  Promise.all(promises)
+    .then(() => {
+      const { html: body, css, ids } = extractCritical(
+        ReactDOMServer.renderToString(
+          <Loadable.Capture report={(moduleName) => modules.push(moduleName)}>
+            <Provider store={store}>
+              <StaticRouter context={context} location={req.url}>
+                {renderRoutes(routes)}
+              </StaticRouter>
+            </Provider>
+          </Loadable.Capture>,
+        ),
+      );
 
-    const bundles = getBundles(stats, modules);
+      const bundles = getBundles(stats, modules);
 
-    res.write(
-      template({
-        body,
-        css,
-        ids: JSON.stringify(ids),
-        /*
+      res.write(
+        template({
+          body,
+          css,
+          ids: JSON.stringify(ids),
+          /*
           WARNING: See the following for security issues around embedding JSON
           in HTML:
 
           http://redux.js.org/recipes/ServerRendering.html#security-considerations
         */
-        initialState: JSON.stringify(store.getState()).replace(/</g, '\\u003c'),
-        bundles: bundles
-          .map((bundle) => `<script src="/js/${bundle.file}"></script>`)
-          .join('\n'),
-      }),
-    );
-    res.end();
-  });
+          initialState: JSON.stringify(store.getState())
+            .replace(/</g, '\\u003c'),
+          bundles: bundles
+            .map((bundle) => `<script src="/js/${bundle.file}"></script>`)
+            .join('\n'),
+        }),
+      );
+      res.end();
+    });
 });
 
-Loadable.preloadAll().then(() => {
-  console.log(`listening on ${port}`);
-  server.listen(port);
-});
+Loadable.preloadAll()
+  .then(() => {
+    console.log(`listening on ${port}`);
+    server.listen(port);
+  });
