@@ -11,17 +11,27 @@ import { Text, Title } from './style';
 
 const Landing = ({ actions, test }) => (
   <div>
-    <Title>This is the Duomo of Firenze!</Title>
+    <Title>
+This is the Duomo of Firenze!
+    </Title>
     <img alt="florence duomo" src={duomo} width="100" />
-    <Text>This p is styled with emotion.</Text>
-    <Text>{`This boilerplate supports env vars => ${
-      process.env.MY_ENV_VAR
-    }`}</Text>
-    <Text>{test}</Text>
+    <Text>
+This p is styled with emotion.
+    </Text>
+    <Text>
+      {`This boilerplate supports env vars => ${
+        process.env.MY_ENV_VAR
+      }`}
+    </Text>
+    <Text>
+      {test}
+    </Text>
     <Link style={{ marginRight: '10px' }} to="/about">
       About
     </Link>
-    <Link to="/coin">Coin</Link>
+    <Link to="/coin">
+LiteCoin
+    </Link>
     <br />
     <br />
     <Button onClick={() => actions.setTest('State has been updated!')}>
