@@ -3,7 +3,9 @@ import { func, string } from 'prop-types';
 import StyledButton from './style';
 
 const Button = ({ children, onClick }) => (
-  <StyledButton onClick={onClick}>{children}</StyledButton>
+  <StyledButton onClick={onClick} type="button">
+    {children}
+  </StyledButton>
 );
 
 Button.propTypes = {

@@ -22,9 +22,7 @@ export const fetchCoinPrice = () => ({
     FETCH_COIN_PRICE_SUCCESS,
     FETCH_COIN_PRICE_ERROR,
   ],
-  callAPI: () =>
-    fetch('https://api.coinmarketcap.com/v1/ticker/litecoin/').then((res) =>
-      res.json(),
-    ),
+  callAPI: () => fetch('https://api.coinmarketcap.com/v1/ticker/litecoin/')
+    .then((res) => res.json()),
   formatData: (response) => ({ coinPrice: response[0].price_usd }),
 });

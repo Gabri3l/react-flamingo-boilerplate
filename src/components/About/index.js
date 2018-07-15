@@ -21,7 +21,9 @@ class About extends Component {
         <Link to="/">Home</Link>
         <br />
         <br />
-        <button onClick={this.onButtonClick}>Change Text</button>
+        <button onClick={this.onButtonClick} type="button">
+          Change Text
+        </button>
       </div>
     );
   }

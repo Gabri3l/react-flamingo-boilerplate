@@ -26,10 +26,14 @@
       { "sortShapeProp": true, "ignoreCase": true }
     ],
     "operator-linebreak": [2, "before", { "overrides": { "=": "after" } }],
-    "newline-per-chained-call": [2, { "ignoreChainWithDepth": 2 }],
+    "newline-per-chained-call": [2, { "ignoreChainWithDepth": 1 }],
     "arrow-body-style": [2, "as-needed"],
     "jsx-a11y/href-no-hash": "off",
-    "jsx-a11y/anchor-is-valid": ["warn", { "aspects": ["invalidHref"] }]
+    "jsx-a11y/anchor-is-valid": ["warn", { "aspects": ["invalidHref"] }],
+    "react/destructuring-assignment": "off",
+    "prefer-destructuring": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "object-curly-newline": [2, { "consistent": true }]
   },
   "settings": {
     "import/resolver": {

@@ -14,9 +14,9 @@ const Landing = ({ actions, test }) => (
     <Title>This is the Duomo of Firenze!</Title>
     <img alt="florence duomo" src={duomo} width="100" />
     <Text>This p is styled with emotion.</Text>
-    <Text>{`This boilerplate supports env vars => ${
-      process.env.MY_ENV_VAR
-    }`}</Text>
+    <Text>
+      {`This boilerplate supports env vars => ${process.env.MY_ENV_VAR}`}
+    </Text>
     <Text>{test}</Text>
     <Link style={{ marginRight: '10px' }} to="/about">
       About
