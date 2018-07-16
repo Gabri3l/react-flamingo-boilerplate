@@ -30,9 +30,9 @@ const server = express();
 const store = createStore(reducers, applyMiddleware(slimAsync));
 
 server.use(compression());
-server.use('/public', express.static('../public'));
-server.use('/js', express.static('../public/js'));
-server.use('/images', express.static('../public/images'));
+server.use('/public', express.static('./dist/public'));
+server.use('/js', express.static('./dist/public/js'));
+server.use('/images', express.static('./dist/public/images'));
 
 server.use((req, res) => {
   const modules = [];

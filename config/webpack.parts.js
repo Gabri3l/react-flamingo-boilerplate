@@ -36,22 +36,6 @@ exports.devServer = ({
   },
 });
 
-exports.extractCommonsChunk = () => ({
-  optimization: {
-    splitChunks: {
-      cacheGroups: {
-        commons: {
-          test: /[\\/]node_modules[\\/]/,
-          name: 'commons',
-          enforce: true,
-          minChunks: 2,
-          chunks: 'all',
-        },
-      },
-    },
-  },
-});
-
 exports.hotModuleRelaod = ({ host, port, entry }) => {
   const hmrEntry = [
     `webpack-dev-server/client?http://${host}:${port}`,

@@ -19,7 +19,7 @@ const PATHS = {
 };
 const TITLE = 'React Flamingo Boilerplate';
 
-const baseConfig = {
+const BASE_CONFIG = {
   context: __dirname,
   resolve: {
     extensions: ['.js', '.jsx', '.json'],
@@ -45,10 +45,10 @@ const baseConfig = {
 module.exports = () => {
   switch (process.env.NODE_ENV) {
     case 'production':
-      return merge(baseConfig, prodConfig(PATHS, TITLE));
+      return merge(BASE_CONFIG, prodConfig(PATHS, TITLE));
     case 'server':
-      return merge(baseConfig, serverConfig(PATHS));
+      return merge(BASE_CONFIG, serverConfig(PATHS));
     default:
-      return merge(baseConfig, devConfig(PATHS, TITLE));
+      return merge(BASE_CONFIG, devConfig(PATHS, TITLE));
   }
 };

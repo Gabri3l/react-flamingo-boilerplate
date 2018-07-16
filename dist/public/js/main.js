@@ -1,50 +1,72 @@
 !(function(e) {
   function t(t) {
-    for (var n, o, i = t[0], a = t[1], u = 0, c = []; u < i.length; u++)
-      (o = i[u]), r[o] && c.push(r[o][0]), (r[o] = 0);
-    for (n in a) Object.prototype.hasOwnProperty.call(a, n) && (e[n] = a[n]);
-    for (l && l(t); c.length; ) c.shift()();
+    for (
+      var n, a, u = t[0], l = t[1], s = t[3] || [], f = 0, p = [];
+      f < u.length;
+      f++
+    )
+      (a = u[f]), r[a] && p.push(r[a][0]), (r[a] = 0);
+    for (n in l) Object.prototype.hasOwnProperty.call(l, n) && (e[n] = l[n]);
+    c && c(t);
+    var d = document.getElementsByTagName('head')[0];
+    for (
+      s.forEach(function(e) {
+        if (void 0 === r[e]) {
+          r[e] = null;
+          var t = document.createElement('link');
+          i.nc && t.setAttribute('nonce', i.nc),
+            (t.rel = 'prefetch'),
+            (t.as = 'script'),
+            (t.href = o(e)),
+            d.appendChild(t);
+        }
+      });
+      p.length;
+
+    )
+      p.shift()();
   }
   var n = {},
     r = { 4: 0 };
-  function o(t) {
+  function o(e) {
+    return (
+      i.p +
+      '' +
+      ({ 0: 'main_container', 1: 'about', 2: 'landing', 3: 'app' }[e] || e) +
+      '.' +
+      {
+        0: '507c1eba6fcbbdccaea6',
+        1: '35556c1ba8fbac1cba40',
+        2: '65732e347a6a7b41708b',
+        3: '3c247c1354153ea1318c',
+      }[e] +
+      '.js'
+    );
+  }
+  function i(t) {
     if (n[t]) return n[t].exports;
     var r = (n[t] = { i: t, l: !1, exports: {} });
-    return e[t].call(r.exports, r, r.exports, o), (r.l = !0), r.exports;
+    return e[t].call(r.exports, r, r.exports, i), (r.l = !0), r.exports;
   }
-  (o.e = function(e) {
+  (i.e = function(e) {
     var t = [],
       n = r[e];
     if (0 !== n)
       if (n) t.push(n[2]);
       else {
-        var i = new Promise(function(t, o) {
+        var a = new Promise(function(t, o) {
           n = r[e] = [t, o];
         });
-        t.push((n[2] = i));
-        var a,
-          u = document.getElementsByTagName('head')[0],
-          l = document.createElement('script');
-        (l.charset = 'utf-8'),
-          (l.timeout = 120),
-          o.nc && l.setAttribute('nonce', o.nc),
-          (l.src = (function(e) {
-            return (
-              o.p +
-              '' +
-              ({}[e] || e) +
-              '.' +
-              {
-                0: 'bda9d4aa493ad9d07449',
-                1: 'ed71a68e8ac0ebe69aa1',
-                2: '626307da8daa4ad8875d',
-                3: 'c33d293955530b4162bc',
-              }[e] +
-              '.js'
-            );
-          })(e)),
-          (a = function(t) {
-            (l.onerror = l.onload = null), clearTimeout(c);
+        t.push((n[2] = a));
+        var u,
+          l = document.getElementsByTagName('head')[0],
+          c = document.createElement('script');
+        (c.charset = 'utf-8'),
+          (c.timeout = 120),
+          i.nc && c.setAttribute('nonce', i.nc),
+          (c.src = o(e)),
+          (u = function(t) {
+            (c.onerror = c.onload = null), clearTimeout(s);
             var n = r[e];
             if (0 !== n) {
               if (n) {
@@ -58,35 +80,35 @@
               r[e] = void 0;
             }
           });
-        var c = setTimeout(function() {
-          a({ type: 'timeout', target: l });
+        var s = setTimeout(function() {
+          u({ type: 'timeout', target: c });
         }, 12e4);
-        (l.onerror = l.onload = a), u.appendChild(l);
+        (c.onerror = c.onload = u), l.appendChild(c);
       }
     return Promise.all(t);
   }),
-    (o.m = e),
-    (o.c = n),
-    (o.d = function(e, t, n) {
-      o.o(e, t) || Object.defineProperty(e, t, { enumerable: !0, get: n });
+    (i.m = e),
+    (i.c = n),
+    (i.d = function(e, t, n) {
+      i.o(e, t) || Object.defineProperty(e, t, { enumerable: !0, get: n });
     }),
-    (o.r = function(e) {
+    (i.r = function(e) {
       'undefined' != typeof Symbol &&
         Symbol.toStringTag &&
         Object.defineProperty(e, Symbol.toStringTag, { value: 'Module' }),
         Object.defineProperty(e, '__esModule', { value: !0 });
     }),
-    (o.t = function(e, t) {
-      if ((1 & t && (e = o(e)), 8 & t)) return e;
+    (i.t = function(e, t) {
+      if ((1 & t && (e = i(e)), 8 & t)) return e;
       if (4 & t && 'object' == typeof e && e && e.__esModule) return e;
       var n = Object.create(null);
       if (
-        (o.r(n),
+        (i.r(n),
         Object.defineProperty(n, 'default', { enumerable: !0, value: e }),
         2 & t && 'string' != typeof e)
       )
         for (var r in e)
-          o.d(
+          i.d(
             n,
             r,
             function(t) {
@@ -95,7 +117,7 @@
           );
       return n;
     }),
-    (o.n = function(e) {
+    (i.n = function(e) {
       var t =
         e && e.__esModule
           ? function() {
@@ -104,21 +126,21 @@
           : function() {
               return e;
             };
-      return o.d(t, 'a', t), t;
+      return i.d(t, 'a', t), t;
     }),
-    (o.o = function(e, t) {
+    (i.o = function(e, t) {
       return Object.prototype.hasOwnProperty.call(e, t);
     }),
-    (o.p = '/js/'),
-    (o.oe = function(e) {
+    (i.p = '/js/'),
+    (i.oe = function(e) {
       throw (console.error(e), e);
     });
-  var i = (window.webpackJsonp = window.webpackJsonp || []),
-    a = i.push.bind(i);
-  (i.push = t), (i = i.slice());
-  for (var u = 0; u < i.length; u++) t(i[u]);
-  var l = a;
-  o((o.s = 39));
+  var a = (window.webpackJsonp = window.webpackJsonp || []),
+    u = a.push.bind(a);
+  (a.push = t), (a = a.slice());
+  for (var l = 0; l < a.length; l++) t(a[l]);
+  var c = u;
+  t([[], {}, 0, [1, 0]]), i((i.s = 39));
 })([
   function(e, t, n) {
     'use strict';
@@ -470,7 +492,7 @@
       n.d(t, 'c', function() {
         return f;
       });
-    var r = n(10),
+    var r = n(13),
       o = {
         INIT:
           '@@redux/INIT' +
@@ -747,568 +769,6 @@
             }, {}),
           };
     };
-  },
-  function(e, t, n) {
-    'use strict';
-    (function(e, r) {
-      var o,
-        i = n(33);
-      o =
-        'undefined' != typeof self
-          ? self
-          : 'undefined' != typeof window
-            ? window
-            : void 0 !== e
-              ? e
-              : r;
-      var a = Object(i.a)(o);
-      t.a = a;
-    }.call(this, n(8), n(58)(e)));
-  },
-  function(e, t, n) {
-    'use strict';
-    n.r(t),
-      function(e) {
-        n.d(t, 'flush', function() {
-          return a;
-        }),
-          n.d(t, 'hydrate', function() {
-            return u;
-          }),
-          n.d(t, 'cx', function() {
-            return l;
-          }),
-          n.d(t, 'merge', function() {
-            return c;
-          }),
-          n.d(t, 'getRegisteredStyles', function() {
-            return s;
-          }),
-          n.d(t, 'injectGlobal', function() {
-            return f;
-          }),
-          n.d(t, 'keyframes', function() {
-            return p;
-          }),
-          n.d(t, 'css', function() {
-            return d;
-          }),
-          n.d(t, 'sheet', function() {
-            return h;
-          }),
-          n.d(t, 'caches', function() {
-            return m;
-          });
-        var r = n(24),
-          o = void 0 !== e ? e : {},
-          i = Object(r.a)(o),
-          a = i.flush,
-          u = i.hydrate,
-          l = i.cx,
-          c = i.merge,
-          s = i.getRegisteredStyles,
-          f = i.injectGlobal,
-          p = i.keyframes,
-          d = i.css,
-          h = i.sheet,
-          m = i.caches;
-      }.call(this, n(8));
-  },
-  function(e, t, n) {
-    'use strict';
-    var r = n(2),
-      o = n.n(r),
-      i = n(3),
-      a = n.n(i);
-    function u(e) {
-      return '/' === e.charAt(0);
-    }
-    function l(e, t) {
-      for (var n = t, r = n + 1, o = e.length; r < o; n += 1, r += 1)
-        e[n] = e[r];
-      e.pop();
-    }
-    var c = function(e) {
-        var t =
-            arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : '',
-          n = (e && e.split('/')) || [],
-          r = (t && t.split('/')) || [],
-          o = e && u(e),
-          i = t && u(t),
-          a = o || i;
-        if (
-          (e && u(e) ? (r = n) : n.length && (r.pop(), (r = r.concat(n))),
-          !r.length)
-        )
-          return '/';
-        var c = void 0;
-        if (r.length) {
-          var s = r[r.length - 1];
-          c = '.' === s || '..' === s || '' === s;
-        } else c = !1;
-        for (var f = 0, p = r.length; p >= 0; p--) {
-          var d = r[p];
-          '.' === d
-            ? l(r, p)
-            : '..' === d
-              ? (l(r, p), f++)
-              : f && (l(r, p), f--);
-        }
-        if (!a) for (; f--; f) r.unshift('..');
-        !a || '' === r[0] || (r[0] && u(r[0])) || r.unshift('');
-        var h = r.join('/');
-        return c && '/' !== h.substr(-1) && (h += '/'), h;
-      },
-      s =
-        'function' == typeof Symbol && 'symbol' == typeof Symbol.iterator
-          ? function(e) {
-              return typeof e;
-            }
-          : function(e) {
-              return e &&
-                'function' == typeof Symbol &&
-                e.constructor === Symbol &&
-                e !== Symbol.prototype
-                ? 'symbol'
-                : typeof e;
-            };
-    var f = function e(t, n) {
-        if (t === n) return !0;
-        if (null == t || null == n) return !1;
-        if (Array.isArray(t))
-          return (
-            Array.isArray(n) &&
-            t.length === n.length &&
-            t.every(function(t, r) {
-              return e(t, n[r]);
-            })
-          );
-        var r = void 0 === t ? 'undefined' : s(t);
-        if (r !== (void 0 === n ? 'undefined' : s(n))) return !1;
-        if ('object' === r) {
-          var o = t.valueOf(),
-            i = n.valueOf();
-          if (o !== t || i !== n) return e(o, i);
-          var a = Object.keys(t),
-            u = Object.keys(n);
-          return (
-            a.length === u.length &&
-            a.every(function(r) {
-              return e(t[r], n[r]);
-            })
-          );
-        }
-        return !1;
-      },
-      p = function(e) {
-        return '/' === e.charAt(0) ? e : '/' + e;
-      },
-      d = function(e, t) {
-        return new RegExp('^' + t + '(\\/|\\?|#|$)', 'i').test(e);
-      },
-      h = function(e, t) {
-        return d(e, t) ? e.substr(t.length) : e;
-      },
-      m = function(e) {
-        return '/' === e.charAt(e.length - 1) ? e.slice(0, -1) : e;
-      },
-      y = function(e) {
-        var t = e || '/',
-          n = '',
-          r = '',
-          o = t.indexOf('#');
-        -1 !== o && ((r = t.substr(o)), (t = t.substr(0, o)));
-        var i = t.indexOf('?');
-        return (
-          -1 !== i && ((n = t.substr(i)), (t = t.substr(0, i))),
-          { pathname: t, search: '?' === n ? '' : n, hash: '#' === r ? '' : r }
-        );
-      },
-      v = function(e) {
-        var t = e.pathname,
-          n = e.search,
-          r = e.hash,
-          o = t || '/';
-        return (
-          n && '?' !== n && (o += '?' === n.charAt(0) ? n : '?' + n),
-          r && '#' !== r && (o += '#' === r.charAt(0) ? r : '#' + r),
-          o
-        );
-      },
-      g =
-        Object.assign ||
-        function(e) {
-          for (var t = 1; t < arguments.length; t++) {
-            var n = arguments[t];
-            for (var r in n)
-              Object.prototype.hasOwnProperty.call(n, r) && (e[r] = n[r]);
-          }
-          return e;
-        },
-      b = function(e, t, n, r) {
-        var o = void 0;
-        'string' == typeof e
-          ? ((o = y(e)).state = t)
-          : (void 0 === (o = g({}, e)).pathname && (o.pathname = ''),
-            o.search
-              ? '?' !== o.search.charAt(0) && (o.search = '?' + o.search)
-              : (o.search = ''),
-            o.hash
-              ? '#' !== o.hash.charAt(0) && (o.hash = '#' + o.hash)
-              : (o.hash = ''),
-            void 0 !== t && void 0 === o.state && (o.state = t));
-        try {
-          o.pathname = decodeURI(o.pathname);
-        } catch (e) {
-          throw e instanceof URIError
-            ? new URIError(
-                'Pathname "' +
-                  o.pathname +
-                  '" could not be decoded. This is likely caused by an invalid percent-encoding.',
-              )
-            : e;
-        }
-        return (
-          n && (o.key = n),
-          r
-            ? o.pathname
-              ? '/' !== o.pathname.charAt(0) &&
-                (o.pathname = c(o.pathname, r.pathname))
-              : (o.pathname = r.pathname)
-            : o.pathname || (o.pathname = '/'),
-          o
-        );
-      },
-      w = function(e, t) {
-        return (
-          e.pathname === t.pathname &&
-          e.search === t.search &&
-          e.hash === t.hash &&
-          e.key === t.key &&
-          f(e.state, t.state)
-        );
-      },
-      k = function() {
-        var e = null,
-          t = [];
-        return {
-          setPrompt: function(t) {
-            return (
-              o()(null == e, 'A history supports only one prompt at a time'),
-              (e = t),
-              function() {
-                e === t && (e = null);
-              }
-            );
-          },
-          confirmTransitionTo: function(t, n, r, i) {
-            if (null != e) {
-              var a = 'function' == typeof e ? e(t, n) : e;
-              'string' == typeof a
-                ? 'function' == typeof r
-                  ? r(a, i)
-                  : (o()(
-                      !1,
-                      'A history needs a getUserConfirmation function in order to use a prompt message',
-                    ),
-                    i(!0))
-                : i(!1 !== a);
-            } else i(!0);
-          },
-          appendListener: function(e) {
-            var n = !0,
-              r = function() {
-                n && e.apply(void 0, arguments);
-              };
-            return (
-              t.push(r),
-              function() {
-                (n = !1),
-                  (t = t.filter(function(e) {
-                    return e !== r;
-                  }));
-              }
-            );
-          },
-          notifyListeners: function() {
-            for (var e = arguments.length, n = Array(e), r = 0; r < e; r++)
-              n[r] = arguments[r];
-            t.forEach(function(e) {
-              return e.apply(void 0, n);
-            });
-          },
-        };
-      },
-      x = !(
-        'undefined' == typeof window ||
-        !window.document ||
-        !window.document.createElement
-      ),
-      C = function(e, t, n) {
-        return e.addEventListener
-          ? e.addEventListener(t, n, !1)
-          : e.attachEvent('on' + t, n);
-      },
-      E = function(e, t, n) {
-        return e.removeEventListener
-          ? e.removeEventListener(t, n, !1)
-          : e.detachEvent('on' + t, n);
-      },
-      _ = function(e, t) {
-        return t(window.confirm(e));
-      },
-      S =
-        'function' == typeof Symbol && 'symbol' == typeof Symbol.iterator
-          ? function(e) {
-              return typeof e;
-            }
-          : function(e) {
-              return e &&
-                'function' == typeof Symbol &&
-                e.constructor === Symbol &&
-                e !== Symbol.prototype
-                ? 'symbol'
-                : typeof e;
-            },
-      T =
-        Object.assign ||
-        function(e) {
-          for (var t = 1; t < arguments.length; t++) {
-            var n = arguments[t];
-            for (var r in n)
-              Object.prototype.hasOwnProperty.call(n, r) && (e[r] = n[r]);
-          }
-          return e;
-        },
-      O = function() {
-        try {
-          return window.history.state || {};
-        } catch (e) {
-          return {};
-        }
-      },
-      P = function() {
-        var e =
-          arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {};
-        a()(x, 'Browser history needs a DOM');
-        var t = window.history,
-          n = (function() {
-            var e = window.navigator.userAgent;
-            return (
-              ((-1 === e.indexOf('Android 2.') &&
-                -1 === e.indexOf('Android 4.0')) ||
-                -1 === e.indexOf('Mobile Safari') ||
-                -1 !== e.indexOf('Chrome') ||
-                -1 !== e.indexOf('Windows Phone')) &&
-              window.history &&
-              'pushState' in window.history
-            );
-          })(),
-          r = !(-1 === window.navigator.userAgent.indexOf('Trident')),
-          i = e.forceRefresh,
-          u = void 0 !== i && i,
-          l = e.getUserConfirmation,
-          c = void 0 === l ? _ : l,
-          s = e.keyLength,
-          f = void 0 === s ? 6 : s,
-          y = e.basename ? m(p(e.basename)) : '',
-          g = function(e) {
-            var t = e || {},
-              n = t.key,
-              r = t.state,
-              i = window.location,
-              a = i.pathname + i.search + i.hash;
-            return (
-              o()(
-                !y || d(a, y),
-                'You are attempting to use a basename on a page whose URL path does not begin with the basename. Expected path "' +
-                  a +
-                  '" to begin with "' +
-                  y +
-                  '".',
-              ),
-              y && (a = h(a, y)),
-              b(a, r, n)
-            );
-          },
-          w = function() {
-            return Math.random()
-              .toString(36)
-              .substr(2, f);
-          },
-          P = k(),
-          j = function(e) {
-            T(q, e),
-              (q.length = t.length),
-              P.notifyListeners(q.location, q.action);
-          },
-          N = function(e) {
-            (function(e) {
-              return (
-                void 0 === e.state &&
-                -1 === navigator.userAgent.indexOf('CriOS')
-              );
-            })(e) || M(g(e.state));
-          },
-          R = function() {
-            M(g(O()));
-          },
-          A = !1,
-          M = function(e) {
-            A
-              ? ((A = !1), j())
-              : P.confirmTransitionTo(e, 'POP', c, function(t) {
-                  t ? j({ action: 'POP', location: e }) : I(e);
-                });
-          },
-          I = function(e) {
-            var t = q.location,
-              n = F.indexOf(t.key);
-            -1 === n && (n = 0);
-            var r = F.indexOf(e.key);
-            -1 === r && (r = 0);
-            var o = n - r;
-            o && ((A = !0), L(o));
-          },
-          U = g(O()),
-          F = [U.key],
-          D = function(e) {
-            return y + v(e);
-          },
-          L = function(e) {
-            t.go(e);
-          },
-          z = 0,
-          W = function(e) {
-            1 === (z += e)
-              ? (C(window, 'popstate', N), r && C(window, 'hashchange', R))
-              : 0 === z &&
-                (E(window, 'popstate', N), r && E(window, 'hashchange', R));
-          },
-          B = !1,
-          q = {
-            length: t.length,
-            action: 'POP',
-            location: U,
-            createHref: D,
-            push: function(e, r) {
-              o()(
-                !(
-                  'object' === (void 0 === e ? 'undefined' : S(e)) &&
-                  void 0 !== e.state &&
-                  void 0 !== r
-                ),
-                'You should avoid providing a 2nd state argument to push when the 1st argument is a location-like object that already has state; it is ignored',
-              );
-              var i = b(e, r, w(), q.location);
-              P.confirmTransitionTo(i, 'PUSH', c, function(e) {
-                if (e) {
-                  var r = D(i),
-                    a = i.key,
-                    l = i.state;
-                  if (n)
-                    if ((t.pushState({ key: a, state: l }, null, r), u))
-                      window.location.href = r;
-                    else {
-                      var c = F.indexOf(q.location.key),
-                        s = F.slice(0, -1 === c ? 0 : c + 1);
-                      s.push(i.key),
-                        (F = s),
-                        j({ action: 'PUSH', location: i });
-                    }
-                  else
-                    o()(
-                      void 0 === l,
-                      'Browser history cannot push state in browsers that do not support HTML5 history',
-                    ),
-                      (window.location.href = r);
-                }
-              });
-            },
-            replace: function(e, r) {
-              o()(
-                !(
-                  'object' === (void 0 === e ? 'undefined' : S(e)) &&
-                  void 0 !== e.state &&
-                  void 0 !== r
-                ),
-                'You should avoid providing a 2nd state argument to replace when the 1st argument is a location-like object that already has state; it is ignored',
-              );
-              var i = b(e, r, w(), q.location);
-              P.confirmTransitionTo(i, 'REPLACE', c, function(e) {
-                if (e) {
-                  var r = D(i),
-                    a = i.key,
-                    l = i.state;
-                  if (n)
-                    if ((t.replaceState({ key: a, state: l }, null, r), u))
-                      window.location.replace(r);
-                    else {
-                      var c = F.indexOf(q.location.key);
-                      -1 !== c && (F[c] = i.key),
-                        j({ action: 'REPLACE', location: i });
-                    }
-                  else
-                    o()(
-                      void 0 === l,
-                      'Browser history cannot replace state in browsers that do not support HTML5 history',
-                    ),
-                      window.location.replace(r);
-                }
-              });
-            },
-            go: L,
-            goBack: function() {
-              return L(-1);
-            },
-            goForward: function() {
-              return L(1);
-            },
-            block: function() {
-              var e =
-                  arguments.length > 0 &&
-                  void 0 !== arguments[0] &&
-                  arguments[0],
-                t = P.setPrompt(e);
-              return (
-                B || (W(1), (B = !0)),
-                function() {
-                  return B && ((B = !1), W(-1)), t();
-                }
-              );
-            },
-            listen: function(e) {
-              var t = P.appendListener(e);
-              return (
-                W(1),
-                function() {
-                  W(-1), t();
-                }
-              );
-            },
-          };
-        return q;
-      };
-    Object.assign,
-      'function' == typeof Symbol && Symbol.iterator,
-      Object.assign;
-    n.d(t, 'a', function() {
-      return P;
-    }),
-      n.d(t, !1, function() {}),
-      n.d(t, !1, function() {}),
-      n.d(t, 'b', function() {
-        return b;
-      }),
-      n.d(t, !1, function() {
-        return w;
-      }),
-      n.d(t, !1, function() {
-        return y;
-      }),
-      n.d(t, !1, function() {
-        return v;
-      });
   },
   function(e, t, n) {
     'use strict';
@@ -2032,34 +1492,6 @@
   },
   function(e, t, n) {
     'use strict';
-    n.d(t, 'b', function() {
-      return o;
-    }),
-      n.d(t, 'a', function() {
-        return i;
-      });
-    var r = n(4),
-      o = function(e) {
-        return { type: r.e, payload: e };
-      },
-      i = function() {
-        return {
-          types: [r.b, r.c, r.a],
-          callAPI: function() {
-            return fetch(
-              'https://api.coinmarketcap.com/v1/ticker/litecoin/',
-            ).then(function(e) {
-              return e.json();
-            });
-          },
-          formatData: function(e) {
-            return { coinPrice: e[0].price_usd };
-          },
-        };
-      };
-  },
-  function(e, t, n) {
-    'use strict';
     n(9);
     var r = n(38),
       o = (n.n(r).a.prototype.computeMatch, n(0)),
@@ -2107,6 +1539,611 @@
         return f;
       });
   },
+  function(e, t, n) {
+    'use strict';
+    !(function e() {
+      if (
+        'undefined' != typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ &&
+        'function' == typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE
+      )
+        try {
+          __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE(e);
+        } catch (e) {
+          console.error(e);
+        }
+    })(),
+      (e.exports = n(57));
+  },
+  function(e, t, n) {
+    'use strict';
+    (function(e, r) {
+      var o,
+        i = n(33);
+      o =
+        'undefined' != typeof self
+          ? self
+          : 'undefined' != typeof window
+            ? window
+            : void 0 !== e
+              ? e
+              : r;
+      var a = Object(i.a)(o);
+      t.a = a;
+    }.call(this, n(8), n(58)(e)));
+  },
+  function(e, t, n) {
+    'use strict';
+    n.r(t),
+      function(e) {
+        n.d(t, 'flush', function() {
+          return a;
+        }),
+          n.d(t, 'hydrate', function() {
+            return u;
+          }),
+          n.d(t, 'cx', function() {
+            return l;
+          }),
+          n.d(t, 'merge', function() {
+            return c;
+          }),
+          n.d(t, 'getRegisteredStyles', function() {
+            return s;
+          }),
+          n.d(t, 'injectGlobal', function() {
+            return f;
+          }),
+          n.d(t, 'keyframes', function() {
+            return p;
+          }),
+          n.d(t, 'css', function() {
+            return d;
+          }),
+          n.d(t, 'sheet', function() {
+            return h;
+          }),
+          n.d(t, 'caches', function() {
+            return m;
+          });
+        var r = n(25),
+          o = void 0 !== e ? e : {},
+          i = Object(r.a)(o),
+          a = i.flush,
+          u = i.hydrate,
+          l = i.cx,
+          c = i.merge,
+          s = i.getRegisteredStyles,
+          f = i.injectGlobal,
+          p = i.keyframes,
+          d = i.css,
+          h = i.sheet,
+          m = i.caches;
+      }.call(this, n(8));
+  },
+  function(e, t, n) {
+    'use strict';
+    var r = n(2),
+      o = n.n(r),
+      i = n(3),
+      a = n.n(i);
+    function u(e) {
+      return '/' === e.charAt(0);
+    }
+    function l(e, t) {
+      for (var n = t, r = n + 1, o = e.length; r < o; n += 1, r += 1)
+        e[n] = e[r];
+      e.pop();
+    }
+    var c = function(e) {
+        var t =
+            arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : '',
+          n = (e && e.split('/')) || [],
+          r = (t && t.split('/')) || [],
+          o = e && u(e),
+          i = t && u(t),
+          a = o || i;
+        if (
+          (e && u(e) ? (r = n) : n.length && (r.pop(), (r = r.concat(n))),
+          !r.length)
+        )
+          return '/';
+        var c = void 0;
+        if (r.length) {
+          var s = r[r.length - 1];
+          c = '.' === s || '..' === s || '' === s;
+        } else c = !1;
+        for (var f = 0, p = r.length; p >= 0; p--) {
+          var d = r[p];
+          '.' === d
+            ? l(r, p)
+            : '..' === d
+              ? (l(r, p), f++)
+              : f && (l(r, p), f--);
+        }
+        if (!a) for (; f--; f) r.unshift('..');
+        !a || '' === r[0] || (r[0] && u(r[0])) || r.unshift('');
+        var h = r.join('/');
+        return c && '/' !== h.substr(-1) && (h += '/'), h;
+      },
+      s =
+        'function' == typeof Symbol && 'symbol' == typeof Symbol.iterator
+          ? function(e) {
+              return typeof e;
+            }
+          : function(e) {
+              return e &&
+                'function' == typeof Symbol &&
+                e.constructor === Symbol &&
+                e !== Symbol.prototype
+                ? 'symbol'
+                : typeof e;
+            };
+    var f = function e(t, n) {
+        if (t === n) return !0;
+        if (null == t || null == n) return !1;
+        if (Array.isArray(t))
+          return (
+            Array.isArray(n) &&
+            t.length === n.length &&
+            t.every(function(t, r) {
+              return e(t, n[r]);
+            })
+          );
+        var r = void 0 === t ? 'undefined' : s(t);
+        if (r !== (void 0 === n ? 'undefined' : s(n))) return !1;
+        if ('object' === r) {
+          var o = t.valueOf(),
+            i = n.valueOf();
+          if (o !== t || i !== n) return e(o, i);
+          var a = Object.keys(t),
+            u = Object.keys(n);
+          return (
+            a.length === u.length &&
+            a.every(function(r) {
+              return e(t[r], n[r]);
+            })
+          );
+        }
+        return !1;
+      },
+      p = function(e) {
+        return '/' === e.charAt(0) ? e : '/' + e;
+      },
+      d = function(e, t) {
+        return new RegExp('^' + t + '(\\/|\\?|#|$)', 'i').test(e);
+      },
+      h = function(e, t) {
+        return d(e, t) ? e.substr(t.length) : e;
+      },
+      m = function(e) {
+        return '/' === e.charAt(e.length - 1) ? e.slice(0, -1) : e;
+      },
+      y = function(e) {
+        var t = e || '/',
+          n = '',
+          r = '',
+          o = t.indexOf('#');
+        -1 !== o && ((r = t.substr(o)), (t = t.substr(0, o)));
+        var i = t.indexOf('?');
+        return (
+          -1 !== i && ((n = t.substr(i)), (t = t.substr(0, i))),
+          { pathname: t, search: '?' === n ? '' : n, hash: '#' === r ? '' : r }
+        );
+      },
+      v = function(e) {
+        var t = e.pathname,
+          n = e.search,
+          r = e.hash,
+          o = t || '/';
+        return (
+          n && '?' !== n && (o += '?' === n.charAt(0) ? n : '?' + n),
+          r && '#' !== r && (o += '#' === r.charAt(0) ? r : '#' + r),
+          o
+        );
+      },
+      g =
+        Object.assign ||
+        function(e) {
+          for (var t = 1; t < arguments.length; t++) {
+            var n = arguments[t];
+            for (var r in n)
+              Object.prototype.hasOwnProperty.call(n, r) && (e[r] = n[r]);
+          }
+          return e;
+        },
+      b = function(e, t, n, r) {
+        var o = void 0;
+        'string' == typeof e
+          ? ((o = y(e)).state = t)
+          : (void 0 === (o = g({}, e)).pathname && (o.pathname = ''),
+            o.search
+              ? '?' !== o.search.charAt(0) && (o.search = '?' + o.search)
+              : (o.search = ''),
+            o.hash
+              ? '#' !== o.hash.charAt(0) && (o.hash = '#' + o.hash)
+              : (o.hash = ''),
+            void 0 !== t && void 0 === o.state && (o.state = t));
+        try {
+          o.pathname = decodeURI(o.pathname);
+        } catch (e) {
+          throw e instanceof URIError
+            ? new URIError(
+                'Pathname "' +
+                  o.pathname +
+                  '" could not be decoded. This is likely caused by an invalid percent-encoding.',
+              )
+            : e;
+        }
+        return (
+          n && (o.key = n),
+          r
+            ? o.pathname
+              ? '/' !== o.pathname.charAt(0) &&
+                (o.pathname = c(o.pathname, r.pathname))
+              : (o.pathname = r.pathname)
+            : o.pathname || (o.pathname = '/'),
+          o
+        );
+      },
+      w = function(e, t) {
+        return (
+          e.pathname === t.pathname &&
+          e.search === t.search &&
+          e.hash === t.hash &&
+          e.key === t.key &&
+          f(e.state, t.state)
+        );
+      },
+      k = function() {
+        var e = null,
+          t = [];
+        return {
+          setPrompt: function(t) {
+            return (
+              o()(null == e, 'A history supports only one prompt at a time'),
+              (e = t),
+              function() {
+                e === t && (e = null);
+              }
+            );
+          },
+          confirmTransitionTo: function(t, n, r, i) {
+            if (null != e) {
+              var a = 'function' == typeof e ? e(t, n) : e;
+              'string' == typeof a
+                ? 'function' == typeof r
+                  ? r(a, i)
+                  : (o()(
+                      !1,
+                      'A history needs a getUserConfirmation function in order to use a prompt message',
+                    ),
+                    i(!0))
+                : i(!1 !== a);
+            } else i(!0);
+          },
+          appendListener: function(e) {
+            var n = !0,
+              r = function() {
+                n && e.apply(void 0, arguments);
+              };
+            return (
+              t.push(r),
+              function() {
+                (n = !1),
+                  (t = t.filter(function(e) {
+                    return e !== r;
+                  }));
+              }
+            );
+          },
+          notifyListeners: function() {
+            for (var e = arguments.length, n = Array(e), r = 0; r < e; r++)
+              n[r] = arguments[r];
+            t.forEach(function(e) {
+              return e.apply(void 0, n);
+            });
+          },
+        };
+      },
+      x = !(
+        'undefined' == typeof window ||
+        !window.document ||
+        !window.document.createElement
+      ),
+      C = function(e, t, n) {
+        return e.addEventListener
+          ? e.addEventListener(t, n, !1)
+          : e.attachEvent('on' + t, n);
+      },
+      E = function(e, t, n) {
+        return e.removeEventListener
+          ? e.removeEventListener(t, n, !1)
+          : e.detachEvent('on' + t, n);
+      },
+      _ = function(e, t) {
+        return t(window.confirm(e));
+      },
+      S =
+        'function' == typeof Symbol && 'symbol' == typeof Symbol.iterator
+          ? function(e) {
+              return typeof e;
+            }
+          : function(e) {
+              return e &&
+                'function' == typeof Symbol &&
+                e.constructor === Symbol &&
+                e !== Symbol.prototype
+                ? 'symbol'
+                : typeof e;
+            },
+      T =
+        Object.assign ||
+        function(e) {
+          for (var t = 1; t < arguments.length; t++) {
+            var n = arguments[t];
+            for (var r in n)
+              Object.prototype.hasOwnProperty.call(n, r) && (e[r] = n[r]);
+          }
+          return e;
+        },
+      O = function() {
+        try {
+          return window.history.state || {};
+        } catch (e) {
+          return {};
+        }
+      },
+      P = function() {
+        var e =
+          arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {};
+        a()(x, 'Browser history needs a DOM');
+        var t = window.history,
+          n = (function() {
+            var e = window.navigator.userAgent;
+            return (
+              ((-1 === e.indexOf('Android 2.') &&
+                -1 === e.indexOf('Android 4.0')) ||
+                -1 === e.indexOf('Mobile Safari') ||
+                -1 !== e.indexOf('Chrome') ||
+                -1 !== e.indexOf('Windows Phone')) &&
+              window.history &&
+              'pushState' in window.history
+            );
+          })(),
+          r = !(-1 === window.navigator.userAgent.indexOf('Trident')),
+          i = e.forceRefresh,
+          u = void 0 !== i && i,
+          l = e.getUserConfirmation,
+          c = void 0 === l ? _ : l,
+          s = e.keyLength,
+          f = void 0 === s ? 6 : s,
+          y = e.basename ? m(p(e.basename)) : '',
+          g = function(e) {
+            var t = e || {},
+              n = t.key,
+              r = t.state,
+              i = window.location,
+              a = i.pathname + i.search + i.hash;
+            return (
+              o()(
+                !y || d(a, y),
+                'You are attempting to use a basename on a page whose URL path does not begin with the basename. Expected path "' +
+                  a +
+                  '" to begin with "' +
+                  y +
+                  '".',
+              ),
+              y && (a = h(a, y)),
+              b(a, r, n)
+            );
+          },
+          w = function() {
+            return Math.random()
+              .toString(36)
+              .substr(2, f);
+          },
+          P = k(),
+          j = function(e) {
+            T(q, e),
+              (q.length = t.length),
+              P.notifyListeners(q.location, q.action);
+          },
+          N = function(e) {
+            (function(e) {
+              return (
+                void 0 === e.state &&
+                -1 === navigator.userAgent.indexOf('CriOS')
+              );
+            })(e) || M(g(e.state));
+          },
+          R = function() {
+            M(g(O()));
+          },
+          A = !1,
+          M = function(e) {
+            A
+              ? ((A = !1), j())
+              : P.confirmTransitionTo(e, 'POP', c, function(t) {
+                  t ? j({ action: 'POP', location: e }) : I(e);
+                });
+          },
+          I = function(e) {
+            var t = q.location,
+              n = F.indexOf(t.key);
+            -1 === n && (n = 0);
+            var r = F.indexOf(e.key);
+            -1 === r && (r = 0);
+            var o = n - r;
+            o && ((A = !0), L(o));
+          },
+          U = g(O()),
+          F = [U.key],
+          D = function(e) {
+            return y + v(e);
+          },
+          L = function(e) {
+            t.go(e);
+          },
+          z = 0,
+          W = function(e) {
+            1 === (z += e)
+              ? (C(window, 'popstate', N), r && C(window, 'hashchange', R))
+              : 0 === z &&
+                (E(window, 'popstate', N), r && E(window, 'hashchange', R));
+          },
+          B = !1,
+          q = {
+            length: t.length,
+            action: 'POP',
+            location: U,
+            createHref: D,
+            push: function(e, r) {
+              o()(
+                !(
+                  'object' === (void 0 === e ? 'undefined' : S(e)) &&
+                  void 0 !== e.state &&
+                  void 0 !== r
+                ),
+                'You should avoid providing a 2nd state argument to push when the 1st argument is a location-like object that already has state; it is ignored',
+              );
+              var i = b(e, r, w(), q.location);
+              P.confirmTransitionTo(i, 'PUSH', c, function(e) {
+                if (e) {
+                  var r = D(i),
+                    a = i.key,
+                    l = i.state;
+                  if (n)
+                    if ((t.pushState({ key: a, state: l }, null, r), u))
+                      window.location.href = r;
+                    else {
+                      var c = F.indexOf(q.location.key),
+                        s = F.slice(0, -1 === c ? 0 : c + 1);
+                      s.push(i.key),
+                        (F = s),
+                        j({ action: 'PUSH', location: i });
+                    }
+                  else
+                    o()(
+                      void 0 === l,
+                      'Browser history cannot push state in browsers that do not support HTML5 history',
+                    ),
+                      (window.location.href = r);
+                }
+              });
+            },
+            replace: function(e, r) {
+              o()(
+                !(
+                  'object' === (void 0 === e ? 'undefined' : S(e)) &&
+                  void 0 !== e.state &&
+                  void 0 !== r
+                ),
+                'You should avoid providing a 2nd state argument to replace when the 1st argument is a location-like object that already has state; it is ignored',
+              );
+              var i = b(e, r, w(), q.location);
+              P.confirmTransitionTo(i, 'REPLACE', c, function(e) {
+                if (e) {
+                  var r = D(i),
+                    a = i.key,
+                    l = i.state;
+                  if (n)
+                    if ((t.replaceState({ key: a, state: l }, null, r), u))
+                      window.location.replace(r);
+                    else {
+                      var c = F.indexOf(q.location.key);
+                      -1 !== c && (F[c] = i.key),
+                        j({ action: 'REPLACE', location: i });
+                    }
+                  else
+                    o()(
+                      void 0 === l,
+                      'Browser history cannot replace state in browsers that do not support HTML5 history',
+                    ),
+                      window.location.replace(r);
+                }
+              });
+            },
+            go: L,
+            goBack: function() {
+              return L(-1);
+            },
+            goForward: function() {
+              return L(1);
+            },
+            block: function() {
+              var e =
+                  arguments.length > 0 &&
+                  void 0 !== arguments[0] &&
+                  arguments[0],
+                t = P.setPrompt(e);
+              return (
+                B || (W(1), (B = !0)),
+                function() {
+                  return B && ((B = !1), W(-1)), t();
+                }
+              );
+            },
+            listen: function(e) {
+              var t = P.appendListener(e);
+              return (
+                W(1),
+                function() {
+                  W(-1), t();
+                }
+              );
+            },
+          };
+        return q;
+      };
+    Object.assign,
+      'function' == typeof Symbol && Symbol.iterator,
+      Object.assign;
+    n.d(t, 'a', function() {
+      return P;
+    }),
+      n.d(t, !1, function() {}),
+      n.d(t, !1, function() {}),
+      n.d(t, 'b', function() {
+        return b;
+      }),
+      n.d(t, !1, function() {
+        return w;
+      }),
+      n.d(t, !1, function() {
+        return y;
+      }),
+      n.d(t, !1, function() {
+        return v;
+      });
+  },
+  function(e, t, n) {
+    'use strict';
+    n.d(t, 'b', function() {
+      return o;
+    }),
+      n.d(t, 'a', function() {
+        return i;
+      });
+    var r = n(4),
+      o = function(e) {
+        return { type: r.e, payload: e };
+      },
+      i = function() {
+        return {
+          types: [r.b, r.c, r.a],
+          callAPI: function() {
+            return fetch(
+              'https://api.coinmarketcap.com/v1/ticker/litecoin/',
+            ).then(function(e) {
+              return e.json();
+            });
+          },
+          formatData: function(e) {
+            return { coinPrice: e[0].price_usd };
+          },
+        };
+      };
+  },
   function(e, t) {
     e.exports = function(e) {
       return null != e && 'object' == typeof e;
@@ -2117,7 +2154,7 @@
     e.exports = r;
   },
   function(e, t, n) {
-    var r = n(17),
+    var r = n(18),
       o = n(46),
       i = n(45),
       a = '[object Null]',
@@ -2257,7 +2294,7 @@ object-assign
   },
   function(e, t, n) {
     'use strict';
-    var r = n(19),
+    var r = n(20),
       o = {
         animationIterationCount: 1,
         borderImageOutset: 1,
@@ -3027,7 +3064,7 @@ object-assign
           c
         );
       },
-      u = n(31),
+      u = n(32),
       l = n.n(u),
       c = /[A-Z]|^ms/g,
       s = Object(r.a)(function(e) {
@@ -3473,21 +3510,6 @@ object-assign
         };
       };
     })();
-  },
-  function(e, t, n) {
-    'use strict';
-    !(function e() {
-      if (
-        'undefined' != typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ &&
-        'function' == typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE
-      )
-        try {
-          __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE(e);
-        } catch (e) {
-          console.error(e);
-        }
-    })(),
-      (e.exports = n(57));
   },
   function(e, t, n) {
     'use strict';
@@ -3976,7 +3998,7 @@ object-assign
       a = n.n(i),
       u = n(1),
       l = n.n(u),
-      c = n(12),
+      c = n(15),
       s = n(3),
       f = n.n(s),
       p =
@@ -4146,14 +4168,14 @@ object-assign
     };
     var g,
       b = v,
-      w = n(15),
-      k = n(13),
-      x = n(32),
-      C = n(11),
+      w = n(11),
+      k = n(10),
+      x = n(12),
+      C = n(14),
       E = n(6),
       _ = n.n(E),
       S = n(7),
-      T = n(30),
+      T = n(31),
       O = n.n(T),
       P = n(4);
     function j() {
@@ -4223,16 +4245,16 @@ object-assign
               },
         ),
       ),
-      M = n(14),
+      M = n(16),
       I = [
         {
           component: _()({
             loader: function() {
-              return n.e(3).then(n.bind(null, 29));
+              return n.e(3).then(n.bind(null, 30));
             },
             modules: ['./App'],
             webpack: function() {
-              return [29];
+              return [30];
             },
             loading: function() {
               return o.a.createElement('div', null, 'Loading...');
@@ -4244,11 +4266,11 @@ object-assign
               exact: !0,
               component: _()({
                 loader: function() {
-                  return n.e(2).then(n.bind(null, 25));
+                  return n.e(2).then(n.bind(null, 26));
                 },
                 modules: ['components/Landing'],
                 webpack: function() {
-                  return [25];
+                  return [26];
                 },
                 loading: function() {
                   return o.a.createElement('div', null, 'Loading...');
@@ -4260,11 +4282,11 @@ object-assign
               exact: !0,
               component: _()({
                 loader: function() {
-                  return n.e(1).then(n.bind(null, 27));
+                  return n.e(1).then(n.bind(null, 28));
                 },
                 modules: ['components/About'],
                 webpack: function() {
-                  return [27];
+                  return [28];
                 },
                 loading: function() {
                   return o.a.createElement('div', null, 'Loading...');
@@ -4276,11 +4298,11 @@ object-assign
               exact: !0,
               component: _()({
                 loader: function() {
-                  return n.e(0).then(n.bind(null, 26));
+                  return n.e(0).then(n.bind(null, 27));
                 },
                 modules: ['containers/MainContainer'],
                 webpack: function() {
-                  return [26];
+                  return [27];
                 },
                 loading: function() {
                   return o.a.createElement('div', null, 'Loading...');
@@ -4327,9 +4349,9 @@ object-assign
     e.exports = r;
   },
   function(e, t, n) {
-    var r = n(18),
+    var r = n(19),
       o = n(42),
-      i = n(16),
+      i = n(17),
       a = '[object Object]',
       u = Function.prototype,
       l = Object.prototype,
@@ -4355,7 +4377,7 @@ object-assign
     };
   },
   function(e, t, n) {
-    var r = n(17),
+    var r = n(18),
       o = Object.prototype,
       i = o.hasOwnProperty,
       a = o.toString,
@@ -4384,9 +4406,9 @@ object-assign
     e.exports = i;
   },
   function(e, t, n) {
-    var r = n(18),
+    var r = n(19),
       o = n(44),
-      i = n(16),
+      i = n(17),
       a = '[object String]';
     e.exports = function(e) {
       return 'string' == typeof e || (!o(e) && i(e) && r(e) == a);
@@ -4515,15 +4537,15 @@ object-assign
      *
      * This source code is licensed under the MIT license found in the
      * LICENSE file in the root directory of this source tree.
-     */ var r = n(22),
+     */ var r = n(23),
       o = n(0),
       i = n(56),
-      a = n(23),
-      u = n(20),
+      a = n(24),
+      u = n(21),
       l = n(55),
       c = n(54),
       s = n(53),
-      f = n(21);
+      f = n(22);
     function p(e) {
       for (
         var t = arguments.length - 1,
@@ -10349,10 +10371,10 @@ object-assign
      *
      * This source code is licensed under the MIT license found in the
      * LICENSE file in the root directory of this source tree.
-     */ var r = n(23),
-      o = n(22),
-      i = n(21),
-      a = n(20),
+     */ var r = n(24),
+      o = n(23),
+      i = n(22),
+      a = n(21),
       u = 'function' == typeof Symbol && Symbol.for,
       l = u ? Symbol.for('react.element') : 60103,
       c = u ? Symbol.for('react.portal') : 60106,

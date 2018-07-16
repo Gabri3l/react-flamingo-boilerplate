@@ -5,7 +5,9 @@ import { fetchCoinPrice } from 'actions/actionCreators';
 const routes = [
   {
     component: Loadable({
-      loader: () => import('./App'),
+      loader: () => import(/* webpackChunkName: "app" */
+        './App',
+      ),
       loading: () => <div>Loading...</div>,
     }),
     routes: [
@@ -13,7 +15,9 @@ const routes = [
         path: '/',
         exact: true,
         component: Loadable({
-          loader: () => import('components/Landing'),
+          loader: () => import(/* webpackChunkName: "landing" */
+            'components/Landing',
+          ),
           loading: () => <div>Loading...</div>,
         }),
       },
@@ -21,7 +25,9 @@ const routes = [
         path: '/about',
         exact: true,
         component: Loadable({
-          loader: () => import('components/About'),
+          loader: () => import(/* webpackChunkName: "about" */
+            'components/About',
+          ),
           loading: () => <div>Loading...</div>,
         }),
       },
@@ -29,7 +35,9 @@ const routes = [
         path: '/coin',
         exact: true,
         component: Loadable({
-          loader: () => import('containers/MainContainer'),
+          loader: () => import(/* webpackChunkName: "main_container" */
+            'containers/MainContainer',
+          ),
           loading: () => <div>Loading...</div>,
         }),
         fetchData: (store) => store.dispatch(fetchCoinPrice()),
