@@ -41,7 +41,7 @@ const BASE_CONFIG = {
   bail: true,
 };
 
-module.exports = ({ mode }) => {
+module.exports = ({ mode } = { mode: 'production' }) => {
   switch (mode) {
     case 'production':
       return merge(BASE_CONFIG, prodConfig(PATHS, TITLE));
