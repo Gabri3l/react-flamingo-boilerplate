@@ -17,8 +17,8 @@ module.exports = (PATHS) => merge([
   },
   parts.limitChunks(1),
   parts.setEnvVariables({
-    PORT: JSON.stringify(process.env.PORT),
-    MY_ENV_VAR: JSON.stringify(process.env.MY_ENV_VAR),
+    PORT: process.env.PORT,
+    MY_ENV_VAR: process.env.MY_ENV_VAR,
   }),
   parts.transpileJavaScript({
     presets: [['@babel/env', { targets: { node: 'current' } }]],

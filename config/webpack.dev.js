@@ -33,7 +33,7 @@ module.exports = (PATHS, TITLE) => merge([
     title: TITLE,
   }),
   parts.setEnvVariables({
-    MY_ENV_VAR: JSON.stringify(process.env.MY_ENV_VAR),
+    MY_ENV_VAR: process.env.MY_ENV_VAR,
   }),
   parts.hotModuleRelaod({
     host: HOST,

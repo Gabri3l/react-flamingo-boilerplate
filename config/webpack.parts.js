@@ -178,13 +178,21 @@ exports.speedUpMinification = (shouldSpeedUp) => ({
   },
 });
 
-exports.setEnvVariables = (vars = {}) => ({
-  plugins: [
-    new webpack.DefinePlugin({
-      'process.env': vars,
-    }),
-  ],
-});
+exports.setEnvVariables = (vars = {}) => {
+  const envVars = Object.keys(vars)
+    .reduce(
+      (acc, k) => Object.assign({}, acc, { [k]: JSON.stringify(vars[k]) }),
+      {},
+    );
+
+  return {
+    plugins: [
+      new webpack.DefinePlugin({
+        'process.env': envVars,
+      }),
+    ],
+  };
+};
 
 exports.transpileJavaScript = (options = {}) => ({
   module: {
