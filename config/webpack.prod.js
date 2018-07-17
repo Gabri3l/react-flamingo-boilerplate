@@ -35,7 +35,6 @@ module.exports = (PATHS, TITLE) => merge([
     injectChunkBundles: true,
   }),
   parts.setEnvVariables({
-    NODE_ENV: JSON.stringify('production'),
     MY_ENV_VAR: JSON.stringify(process.env.MY_ENV_VAR),
   }),
   parts.clean(PATHS.public),

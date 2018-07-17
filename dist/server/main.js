@@ -2,8 +2,8 @@
   var t = {};
   function i(n) {
     if (t[n]) return t[n].exports;
-    var s = (t[n] = { i: n, l: !1, exports: {} });
-    return e[n].call(s.exports, s, s.exports, i), (s.l = !0), s.exports;
+    var a = (t[n] = { i: n, l: !1, exports: {} });
+    return e[n].call(a.exports, a, a.exports, i), (a.l = !0), a.exports;
   }
   (i.m = e),
     (i.c = t),
@@ -25,13 +25,13 @@
         Object.defineProperty(n, 'default', { enumerable: !0, value: e }),
         2 & t && 'string' != typeof e)
       )
-        for (var s in e)
+        for (var a in e)
           i.d(
             n,
-            s,
+            a,
             function(t) {
               return e[t];
-            }.bind(null, s),
+            }.bind(null, a),
           );
       return n;
     }),
@@ -68,20 +68,20 @@
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.fetchCoinPrice = t.setElse = t.setTest = void 0);
     var n = i(11);
-    (t.setTest = (e) => ({ type: n.SET_TEST, payload: e })),
-      (t.setElse = (e) => ({ type: n.SET_ELSE, payload: e })),
-      (t.fetchCoinPrice = () => ({
-        types: [
-          n.FETCH_COIN_PRICE_PENDING,
-          n.FETCH_COIN_PRICE_SUCCESS,
-          n.FETCH_COIN_PRICE_ERROR,
-        ],
-        callAPI: () =>
-          fetch('https://api.coinmarketcap.com/v1/ticker/litecoin/').then((e) =>
-            e.json(),
-          ),
-        formatData: (e) => ({ coinPrice: e[0].price_usd }),
-      }));
+    t.setTest = (e) => ({ type: n.SET_TEST, payload: e });
+    t.setElse = (e) => ({ type: n.SET_ELSE, payload: e });
+    t.fetchCoinPrice = () => ({
+      types: [
+        n.FETCH_COIN_PRICE_PENDING,
+        n.FETCH_COIN_PRICE_SUCCESS,
+        n.FETCH_COIN_PRICE_ERROR,
+      ],
+      callAPI: () =>
+        fetch('https://api.coinmarketcap.com/v1/ticker/litecoin/').then((e) =>
+          e.json(),
+        ),
+      formatData: (e) => ({ coinPrice: e[0].price_usd }),
+    });
   },
   function(e, t) {
     e.exports = require('react-redux');
@@ -94,16 +94,26 @@
   },
   function(e, t, i) {
     'use strict';
-    Object.defineProperty(t, '__esModule', { value: !0 });
-    var n = i(0),
-      s = (function(e) {
-        return e && e.__esModule ? e : { default: e };
-      })(n),
+    Object.defineProperty(t, '__esModule', { value: !0 }), (t.default = void 0);
+    var n = (function(e) {
+        if (e && e.__esModule) return e;
+        var t = {};
+        if (null != e)
+          for (var i in e)
+            if (Object.prototype.hasOwnProperty.call(e, i)) {
+              var n =
+                Object.defineProperty && Object.getOwnPropertyDescriptor
+                  ? Object.getOwnPropertyDescriptor(e, i)
+                  : {};
+              n.get || n.set ? Object.defineProperty(t, i, n) : (t[i] = e[i]);
+            }
+        return (t.default = e), t;
+      })(i(0)),
       a = i(4),
-      o = i(3),
-      l = i(1),
+      s = i(3),
+      o = i(1),
       r = i(2);
-    function u(e, t, i) {
+    function l(e, t, i) {
       return (
         t in e
           ? Object.defineProperty(e, t, {
@@ -123,10 +133,10 @@
       render() {
         const { coinPrice: e, fetchError: t, isFetching: i } = this.props;
         return i
-          ? s.default.createElement('div', null, 'Fetching data...')
+          ? n.default.createElement('div', null, 'Fetching data...')
           : t
-            ? s.default.createElement('div', null, 'Something went wrong')
-            : s.default.createElement(
+            ? n.default.createElement('div', null, 'Something went wrong')
+            : n.default.createElement(
                 'div',
                 null,
                 'Right now the price of LTC is $',
@@ -134,14 +144,14 @@
               );
       }
     }
-    u(c, 'propTypes', {
-      actions: (0, l.shape)({ fetchCoinPrice: l.func.isRequired }).isRequired,
-      coinPrice: l.string,
-      fetchError: l.string,
-      isFetching: l.bool,
+    l(c, 'propTypes', {
+      actions: (0, o.shape)({ fetchCoinPrice: o.func.isRequired }).isRequired,
+      coinPrice: o.string,
+      fetchError: o.string,
+      isFetching: o.bool,
     }),
-      u(c, 'defaultProps', { coinPrice: '', fetchError: '', isFetching: !1 });
-    t.default = (0, o.connect)(
+      l(c, 'defaultProps', { coinPrice: '', fetchError: '', isFetching: !1 });
+    var u = (0, s.connect)(
       (e) => ({
         coinPrice: e.coinPrice,
         fetchError: e.fetchCoinPriceError,
@@ -154,16 +164,27 @@
         ),
       }),
     )(c);
+    t.default = u;
   },
   function(e, t, i) {
     'use strict';
-    Object.defineProperty(t, '__esModule', { value: !0 });
-    var n = i(0),
-      s = (function(e) {
-        return e && e.__esModule ? e : { default: e };
-      })(n),
+    Object.defineProperty(t, '__esModule', { value: !0 }), (t.default = void 0);
+    var n = (function(e) {
+        if (e && e.__esModule) return e;
+        var t = {};
+        if (null != e)
+          for (var i in e)
+            if (Object.prototype.hasOwnProperty.call(e, i)) {
+              var n =
+                Object.defineProperty && Object.getOwnPropertyDescriptor
+                  ? Object.getOwnPropertyDescriptor(e, i)
+                  : {};
+              n.get || n.set ? Object.defineProperty(t, i, n) : (t[i] = e[i]);
+            }
+        return (t.default = e), t;
+      })(i(0)),
       a = i(5);
-    t.default = class extends n.Component {
+    var s = class extends n.Component {
       constructor(e) {
         super(e),
           (function(e, t, i) {
@@ -183,15 +204,15 @@
           (this.state = { test: 'This component has its own state.' });
       }
       render() {
-        return s.default.createElement(
+        return n.default.createElement(
           'div',
           null,
-          s.default.createElement('h1', null, 'About'),
-          s.default.createElement('p', null, this.state.test),
-          s.default.createElement(a.Link, { to: '/' }, 'Home'),
-          s.default.createElement('br', null),
-          s.default.createElement('br', null),
-          s.default.createElement(
+          n.default.createElement('h1', null, 'About'),
+          n.default.createElement('p', null, this.state.test),
+          n.default.createElement(a.Link, { to: '/' }, 'Home'),
+          n.default.createElement('br', null),
+          n.default.createElement('br', null),
+          n.default.createElement(
             'button',
             { onClick: this.onButtonClick, type: 'button' },
             'Change Text',
@@ -199,33 +220,34 @@
         );
       }
     };
+    t.default = s;
   },
   function(e, t) {
     e.exports = require('react-emotion');
   },
   function(e, t, i) {
     'use strict';
-    Object.defineProperty(t, '__esModule', { value: !0 });
+    Object.defineProperty(t, '__esModule', { value: !0 }), (t.default = void 0);
     var n = m(i(0)),
-      s = i(4),
-      a = i(3),
+      a = i(4),
+      s = i(3),
       o = i(1),
-      l = i(5),
-      r = m(i(17)),
-      u = i(2),
-      c = m(i(16)),
+      r = i(5),
+      l = m(i(17)),
+      c = i(2),
+      u = m(i(16)),
       d = i(14);
     function m(e) {
       return e && e.__esModule ? e : { default: e };
     }
-    const j = ({ actions: e, test: t }) =>
+    const f = ({ actions: e, test: t }) =>
       n.default.createElement(
         'div',
         null,
         n.default.createElement(d.Title, null, 'This is the Duomo of Firenze!'),
         n.default.createElement('img', {
           alt: 'florence duomo',
-          src: r.default,
+          src: l.default,
           width: '100',
         }),
         n.default.createElement(d.Text, null, 'This p is styled with emotion.'),
@@ -236,56 +258,59 @@
         ),
         n.default.createElement(d.Text, null, t),
         n.default.createElement(
-          l.Link,
+          r.Link,
           { style: { marginRight: '10px' }, to: '/about' },
           'About',
         ),
-        n.default.createElement(l.Link, { to: '/coin' }, 'Coin'),
+        n.default.createElement(r.Link, { to: '/coin' }, 'Coin'),
         n.default.createElement('br', null),
         n.default.createElement('br', null),
         n.default.createElement(
-          c.default,
+          u.default,
           { onClick: () => e.setTest('State has been updated!') },
           'Click me',
         ),
       );
-    j.propTypes = {
+    f.propTypes = {
       actions: (0, o.shape)({ setTest: o.func.isRequired }).isRequired,
       test: o.string.isRequired,
     };
-    t.default = (0, a.connect)(
+    var j = (0, s.connect)(
       (e) => ({ test: e.test }),
       (e) => ({
-        actions: (0, s.bindActionCreators)({ setTest: u.setTest }, e),
+        actions: (0, a.bindActionCreators)({ setTest: c.setTest }, e),
       }),
-    )(j);
+    )(f);
+    t.default = j;
   },
   function(e, t, i) {
     'use strict';
-    Object.defineProperty(t, '__esModule', { value: !0 });
+    Object.defineProperty(t, '__esModule', { value: !0 }), (t.default = void 0);
     var n = (function(e) {
         return e && e.__esModule ? e : { default: e };
       })(i(0)),
-      s = i(13),
-      a = i(1);
+      a = i(13),
+      s = i(1);
     const o = ({ route: e }) =>
       n.default.createElement(
         'div',
         null,
         n.default.createElement('p', null, 'App'),
-        n.default.createElement('div', null, (0, s.renderRoutes)(e.routes)),
+        n.default.createElement('div', null, (0, a.renderRoutes)(e.routes)),
       );
-    (o.propTypes = { route: (0, a.shape)({ routes: a.array }).isRequired }),
-      (t.default = o);
+    o.propTypes = { route: (0, s.shape)({ routes: s.array }).isRequired };
+    var r = o;
+    t.default = r;
   },
   function(e, t, i) {
     'use strict';
-    Object.defineProperty(t, '__esModule', { value: !0 });
-    (t.FETCH_COIN_PRICE_ERROR = 'FETCH_COIN_PRICE_ERROR'),
-      (t.FETCH_COIN_PRICE_PENDING = 'FETCH_COIN_PRICE_PENDING'),
-      (t.FETCH_COIN_PRICE_SUCCESS = 'FETCH_COIN_PRICE_SUCCESS'),
-      (t.SET_TEST = 'SET_TEST'),
-      (t.SET_ELSE = 'SET_ELSE');
+    Object.defineProperty(t, '__esModule', { value: !0 }),
+      (t.SET_ELSE = t.SET_TEST = t.FETCH_COIN_PRICE_SUCCESS = t.FETCH_COIN_PRICE_PENDING = t.FETCH_COIN_PRICE_ERROR = void 0);
+    t.FETCH_COIN_PRICE_ERROR = 'FETCH_COIN_PRICE_ERROR';
+    t.FETCH_COIN_PRICE_PENDING = 'FETCH_COIN_PRICE_PENDING';
+    t.FETCH_COIN_PRICE_SUCCESS = 'FETCH_COIN_PRICE_SUCCESS';
+    t.SET_TEST = 'SET_TEST';
+    t.SET_ELSE = 'SET_ELSE';
   },
   function(e, t) {
     e.exports = require('@react-firenze/react-loadable');
@@ -300,16 +325,18 @@
     var n = (function(e) {
       return e && e.__esModule ? e : { default: e };
     })(i(8));
-    (t.Title = (0, n.default)('h1')({ fontFamily: 'monospace', fontSize: 30 })),
-      (t.Text = (0, n.default)('p')({ fontFamily: 'monospace', fontSize: 15 }));
+    const a = (0, n.default)('h1')({ fontFamily: 'monospace', fontSize: 30 });
+    t.Title = a;
+    const s = (0, n.default)('p')({ fontFamily: 'monospace', fontSize: 15 });
+    t.Text = s;
   },
   function(e, t, i) {
     'use strict';
-    Object.defineProperty(t, '__esModule', { value: !0 });
-    var n = (function(e) {
+    Object.defineProperty(t, '__esModule', { value: !0 }), (t.default = void 0);
+    var n = (0,
+    (function(e) {
       return e && e.__esModule ? e : { default: e };
-    })(i(8));
-    t.default = (0, n.default)('button')({
+    })(i(8)).default)('button')({
       width: 100,
       height: 25,
       border: 'solid 1px black',
@@ -321,23 +348,22 @@
       ':focus': { outline: 'none' },
       ':hover': { background: 'black', color: 'white' },
     });
+    t.default = n;
   },
   function(e, t, i) {
     'use strict';
-    Object.defineProperty(t, '__esModule', { value: !0 });
+    Object.defineProperty(t, '__esModule', { value: !0 }), (t.default = void 0);
     var n = o(i(0)),
-      s = i(1),
-      a = o(i(15));
+      a = i(1),
+      s = o(i(15));
     function o(e) {
       return e && e.__esModule ? e : { default: e };
     }
-    const l = ({ children: e, onClick: t }) =>
-      n.default.createElement(a.default, { onClick: t, type: 'button' }, e);
-    (l.propTypes = {
-      children: s.string.isRequired,
-      onClick: s.func.isRequired,
-    }),
-      (t.default = l);
+    const r = ({ children: e, onClick: t }) =>
+      n.default.createElement(s.default, { onClick: t, type: 'button' }, e);
+    r.propTypes = { children: a.string.isRequired, onClick: a.func.isRequired };
+    var l = r;
+    t.default = l;
   },
   function(e, t) {
     e.exports = '/images/santa-maria-del-fiore.210c02d6.svg';
@@ -353,9 +379,9 @@
   },
   function(e, t, i) {
     'use strict';
-    Object.defineProperty(t, '__esModule', { value: !0 });
+    Object.defineProperty(t, '__esModule', { value: !0 }), (t.default = void 0);
     var n = i(11);
-    function s(e) {
+    function a(e) {
       for (var t = 1; t < arguments.length; t++) {
         var i = null != arguments[t] ? arguments[t] : {},
           n = Object.keys(i);
@@ -366,12 +392,12 @@
             }),
           )),
           n.forEach(function(t) {
-            a(e, t, i[t]);
+            s(e, t, i[t]);
           });
       }
       return e;
     }
-    function a(e, t, i) {
+    function s(e, t, i) {
       return (
         t in e
           ? Object.defineProperty(e, t, {
@@ -384,7 +410,7 @@
         e
       );
     }
-    const o = (0, i(18).createReducer)(
+    var o = (0, i(18).createReducer)(
       {
         coinPrice: null,
         fetchCoinPriceError: null,
@@ -393,36 +419,36 @@
       },
       {
         [n.FETCH_COIN_PRICE_ERROR]: (e, t) =>
-          s({}, e, {
+          a({}, e, {
             fetchCoinPriceError: t.error.message,
             isFetchingCoinPrice: !1,
           }),
         [n.FETCH_COIN_PRICE_PENDING]: (e) =>
-          s({}, e, { fetchCoinPriceError: null, isFetchingCoinPrice: !0 }),
+          a({}, e, { fetchCoinPriceError: null, isFetchingCoinPrice: !0 }),
         [n.FETCH_COIN_PRICE_SUCCESS]: (e, t) =>
-          s({}, e, {
+          a({}, e, {
             fetchCoinPriceError: null,
             isFetchingCoinPrice: !1,
             coinPrice: t.payload.coinPrice,
           }),
-        [n.SET_TEST]: (e, t) => s({}, e, { test: t.payload }),
-        [n.SET_ELSE]: (e, t) => s({}, e, { else: t.payload }),
+        [n.SET_TEST]: (e, t) => a({}, e, { test: t.payload }),
+        [n.SET_ELSE]: (e, t) => a({}, e, { else: t.payload }),
       },
     );
     t.default = o;
   },
   function(e, t, i) {
     'use strict';
-    Object.defineProperty(t, '__esModule', { value: !0 });
+    Object.defineProperty(t, '__esModule', { value: !0 }), (t.default = void 0);
     var n = o(i(0)),
-      s = o(i(12)),
-      a = i(2);
+      a = o(i(12)),
+      s = i(2);
     function o(e) {
       return e && e.__esModule ? e : { default: e };
     }
-    const l = [
+    var r = [
       {
-        component: (0, s.default)({
+        component: (0, a.default)({
           loader: () => Promise.resolve().then(i.t.bind(null, 10, 7)),
           modules: ['./App'],
           webpack: () => [10],
@@ -432,7 +458,7 @@
           {
             path: '/',
             exact: !0,
-            component: (0, s.default)({
+            component: (0, a.default)({
               loader: () => Promise.resolve().then(i.t.bind(null, 9, 7)),
               modules: ['components/Landing'],
               webpack: () => [9],
@@ -442,7 +468,7 @@
           {
             path: '/about',
             exact: !0,
-            component: (0, s.default)({
+            component: (0, a.default)({
               loader: () => Promise.resolve().then(i.t.bind(null, 7, 7)),
               modules: ['components/About'],
               webpack: () => [7],
@@ -452,18 +478,18 @@
           {
             path: '/coin',
             exact: !0,
-            component: (0, s.default)({
+            component: (0, a.default)({
               loader: () => Promise.resolve().then(i.t.bind(null, 6, 7)),
               modules: ['containers/MainContainer'],
               webpack: () => [6],
               loading: () => n.default.createElement('div', null, 'Loading...'),
             }),
-            fetchData: (e) => e.dispatch((0, a.fetchCoinPrice)()),
+            fetchData: (e) => e.dispatch((0, s.fetchCoinPrice)()),
           },
         ],
       },
     ];
-    t.default = l;
+    t.default = r;
   },
   function(e) {
     e.exports = {
@@ -1028,57 +1054,57 @@
   function(e, t, i) {
     'use strict';
     i(31);
-    var n = g(i(30)),
-      s = g(i(29)),
-      a = g(i(28)),
-      o = g(i(27)),
-      l = g(i(26)),
-      r = g(i(0)),
-      u = g(i(25)),
-      c = i(5),
+    var n = y(i(30)),
+      a = y(i(29)),
+      s = y(i(28)),
+      o = y(i(27)),
+      r = y(i(26)),
+      l = y(i(0)),
+      c = y(i(25)),
+      u = i(5),
       d = i(13),
       m = i(4),
-      j = i(3),
-      f = g(i(24)),
+      f = i(3),
+      j = y(i(24)),
       p = i(23),
-      b = g(i(12)),
+      b = y(i(12)),
       h = i(22),
-      _ = g(i(21)),
-      P = g(i(20)),
-      E = g(i(19));
-    function g(e) {
+      _ = y(i(21)),
+      P = y(i(20)),
+      E = y(i(19));
+    function y(e) {
       return e && e.__esModule ? e : { default: e };
     }
     n.default.config();
-    const y = l.default.readFileSync('./dist/public/index.html'),
-      C = s.default.template(y),
-      x = (0, o.default)(),
-      v = (0, m.createStore)(E.default, (0, m.applyMiddleware)(f.default));
-    x.use((0, a.default)()),
-      x.use('/public', o.default.static('./dist/public')),
-      x.use('/js', o.default.static('./dist/public/js')),
-      x.use('/images', o.default.static('./dist/public/images')),
-      x.use((e, t) => {
+    const g = r.default.readFileSync('./dist/public/index.html'),
+      v = a.default.template(g),
+      C = (0, o.default)(),
+      x = (0, m.createStore)(E.default, (0, m.applyMiddleware)(j.default));
+    C.use((0, s.default)()),
+      C.use('/public', o.default.static('./dist/public')),
+      C.use('/js', o.default.static('./dist/public/js')),
+      C.use('/images', o.default.static('./dist/public/images')),
+      C.use((e, t) => {
         const i = [],
           n = {},
-          s = (0, d.matchRoutes)(P.default, e.url).map(
+          a = (0, d.matchRoutes)(P.default, e.url).map(
             ({ route: e, match: t }) => {
               const i = e.fetchData;
-              return i instanceof Function ? i(v, t) : Promise.resolve(null);
+              return i instanceof Function ? i(x, t) : Promise.resolve(null);
             },
           );
         n.url && t.redirect(n.url),
-          Promise.all(s).then(() => {
-            const { html: s, css: a, ids: o } = (0, p.extractCritical)(
-                u.default.renderToString(
-                  r.default.createElement(
+          Promise.all(a).then(() => {
+            const { html: a, css: s, ids: o } = (0, p.extractCritical)(
+                c.default.renderToString(
+                  l.default.createElement(
                     b.default.Capture,
                     { report: (e) => i.push(e) },
-                    r.default.createElement(
-                      j.Provider,
-                      { store: v },
-                      r.default.createElement(
-                        c.StaticRouter,
+                    l.default.createElement(
+                      f.Provider,
+                      { store: x },
+                      l.default.createElement(
+                        u.StaticRouter,
                         { context: n, location: e.url },
                         (0, d.renderRoutes)(P.default),
                       ),
@@ -1086,17 +1112,17 @@
                   ),
                 ),
               ),
-              l = (0, h.getBundles)(_.default, i);
+              r = (0, h.getBundles)(_.default, i);
             t.write(
-              C({
-                body: s,
-                css: a,
+              v({
+                body: a,
+                css: s,
                 ids: JSON.stringify(o),
-                initialState: JSON.stringify(v.getState()).replace(
+                initialState: JSON.stringify(x.getState()).replace(
                   /</g,
                   '\\u003c',
                 ),
-                bundles: l
+                bundles: r
                   .map((e) => `<script src="/js/${e.file}"><\/script>`)
                   .join('\n'),
               }),
@@ -1105,7 +1131,7 @@
           });
       }),
       b.default.preloadAll().then(() => {
-        console.log('listening on 3000'), x.listen(3e3);
+        console.log('listening on 3000'), C.listen(3e3);
       });
   },
 ]);

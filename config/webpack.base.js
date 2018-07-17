@@ -18,7 +18,6 @@ const PATHS = {
   server: join('../server'),
 };
 const TITLE = 'React Flamingo Boilerplate';
-
 const BASE_CONFIG = {
   context: __dirname,
   resolve: {
@@ -42,8 +41,8 @@ const BASE_CONFIG = {
   bail: true,
 };
 
-module.exports = () => {
-  switch (process.env.NODE_ENV) {
+module.exports = ({ mode }) => {
+  switch (mode) {
     case 'production':
       return merge(BASE_CONFIG, prodConfig(PATHS, TITLE));
     case 'server':

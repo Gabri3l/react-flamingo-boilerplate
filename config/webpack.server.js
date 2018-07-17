@@ -17,7 +17,6 @@ module.exports = (PATHS) => merge([
   },
   parts.limitChunks(1),
   parts.setEnvVariables({
-    NODE_ENV: JSON.stringify('server'),
     PORT: JSON.stringify(process.env.PORT),
     MY_ENV_VAR: JSON.stringify(process.env.MY_ENV_VAR),
   }),
