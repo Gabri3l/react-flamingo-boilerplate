@@ -21,7 +21,7 @@
     "build": "webpack --env.mode production --config ./config/webpack.base.js",
     "build:all": "npm run build && npm run build:server",
     "build:server": "webpack --env.mode server --config ./config/webpack.base.js",
-    "dev": "webpack-dev-server --config ./config/webpack.base.js",
+    "dev": "webpack-dev-server --env.mode development --config ./config/webpack.base.js",
     "lint": "eslint --fix ./src/**/*.{js,jsx} ./src/**/**/*.{js,jsx} ./server/**/*.js",
     "prettier": "prettier --write ./src/**/*.{js,jsx} ./src/**/**/*.{js,jsx} ./server/**/*.js",
     "format": "npm run prettier && npm run lint",

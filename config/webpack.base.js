@@ -41,13 +41,13 @@ const BASE_CONFIG = {
   bail: true,
 };
 
-module.exports = ({ mode } = { mode: 'production' }) => {
+module.exports = ({ mode }) => {
   switch (mode) {
-    case 'production':
-      return merge(BASE_CONFIG, prodConfig(PATHS, TITLE));
+    case 'development':
+      return merge(BASE_CONFIG, devConfig(PATHS, TITLE));
     case 'server':
       return merge(BASE_CONFIG, serverConfig(PATHS));
     default:
-      return merge(BASE_CONFIG, devConfig(PATHS, TITLE));
+      return merge(BASE_CONFIG, prodConfig(PATHS, TITLE));
   }
 };

@@ -46,10 +46,7 @@ exports.hotModuleRelaod = ({ host, port, entry }) => {
     entry: Array.isArray(entry)
       ? [...hmrEntry, ...entry]
       : [...hmrEntry, entry],
-    plugins: [
-      new webpack.HotModuleReplacementPlugin(),
-      new webpack.NamedModulesPlugin(),
-    ],
+    plugins: [new webpack.HotModuleReplacementPlugin()],
     devServer: {
       hot: true,
     },
