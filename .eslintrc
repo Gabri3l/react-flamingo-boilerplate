@@ -1,0 +1,48 @@
+{
+  "extends": ["airbnb"],
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 2017,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "allowImportExportEverywhere": true
+  },
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true,
+    "jest": true
+  },
+  "rules": {
+    "import/prefer-default-export": 0,
+    "react/jsx-filename-extension": 0,
+    "react/jsx-sort-props": 2,
+    "react/sort-comp": 2,
+    "arrow-parens": "off",
+    "react/sort-prop-types": [
+      true,
+      { "sortShapeProp": true, "ignoreCase": true }
+    ],
+    "operator-linebreak": [2, "before", { "overrides": { "=": "after" } }],
+    "newline-per-chained-call": [2, { "ignoreChainWithDepth": 2 }],
+    "arrow-body-style": [2, "as-needed"],
+    "max-len": [
+      2,
+      {
+        "code": 80,
+        "ignoreUrls": true,
+        "ignoreTemplateLiterals": false,
+        "ignoreComments": false
+      }
+    ]
+  },
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "./config/webpack.config.js"
+      }
+    }
+  }
+}
