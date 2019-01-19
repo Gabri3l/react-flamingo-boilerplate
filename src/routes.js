@@ -8,6 +8,7 @@ const routes = [
       loader: () => import('./App'),
       loading: () => <div>Loading...</div>,
     }),
+    path: '/',
     routes: [
       {
         path: '/',
