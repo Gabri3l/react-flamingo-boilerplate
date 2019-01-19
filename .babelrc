@@ -1,0 +1,29 @@
+{
+  "presets": [
+    "@babel/react",
+    [
+      "@babel/env",
+      {
+        "targets": {
+          "browsers": "> 1%, last 2 versions"
+        },
+        "loose": true,
+        "modules": false
+      }
+    ],
+    "@babel/stage-1"
+  ],
+  "plugins": [["emotion", { "sourceMap": true }], "@react-firenze/react-loadable/babel"],
+  "env": {
+    "test": {
+      "presets": ["@babel/react", "@babel/stage-1"],
+      "plugins": ["transform-es2015-modules-commonjs"]
+    },
+    "server": {
+      "plugins": ["transform-es2015-modules-commonjs"]
+    },
+    "production": {
+      "plugins": ["emotion"]
+    }
+  }
+}
