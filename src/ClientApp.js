@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { renderRoutes } from 'react-router-config';
 import { Provider } from 'react-redux';
 import { hydrate, render } from 'react-dom';
-import { rehydrate } from 'glamor';
+import { hydrate as rehydrate } from 'emotion';
 import Loadable from '@react-firenze/react-loadable';
 import store from './store/store';
 import routes from './routes';

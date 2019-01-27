@@ -18,6 +18,8 @@
   "rules": {
     "import/prefer-default-export": 0,
     "react/jsx-filename-extension": 0,
+    "class-methods-use-this": 0,
+    "react/destructuring-assignment": 0,
     "react/jsx-sort-props": 2,
     "react/sort-comp": 2,
     "arrow-parens": "off",

@@ -14,7 +14,7 @@ import { matchRoutes, renderRoutes } from 'react-router-config';
 import { applyMiddleware, createStore } from 'redux';
 import { Provider } from 'react-redux';
 import slimAsync from 'redux-slim-async';
-import { renderStaticOptimized } from 'glamor/server';
+import { extractCritical } from 'emotion-server';
 import Loadable from '@react-firenze/react-loadable';
 import { getBundles } from '@react-firenze/react-loadable/webpack';
 import stats from './react-loadable.json';
@@ -39,7 +39,7 @@ server.use((req, res) => {
   const context = {};
   const branch = matchRoutes(routes, req.url);
   const promises = branch.map(({ route, match }) => {
-    const fetchData = route.fetchData;
+    const { fetchData } = route;
 
     return fetchData instanceof Function
       ? fetchData(store, match)
@@ -49,7 +49,7 @@ server.use((req, res) => {
   if (context.url) res.redirect(context.url);
 
   Promise.all(promises).then(() => {
-    const { html: body, css, ids } = renderStaticOptimized(() =>
+    const { html: body, css, ids } = extractCritical(
       ReactDOMServer.renderToString(
         <Loadable.Capture report={(moduleName) => modules.push(moduleName)}>
           <Provider store={store}>
