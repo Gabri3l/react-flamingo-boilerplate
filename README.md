@@ -1,7 +1,7 @@
-[ ] Use Terser instead of Uglify as it is not really maintained anymore and it breaks with React Hooks
-[ ] Update config/eslint/babel plugins based on the ui project
-[ ] Extract a client-side only rendered boilerplate
-[ ] Add Netlify instructions to ship
+- [ ] Use Terser instead of Uglify as it is not really maintained anymore and it breaks with React Hooks
+- [ ] Update config/eslint/babel plugins based on the ui project
+- [ ] Extract a client-side only rendered boilerplate
+- [ ] Add Netlify instructions to ship
 
 
 <p align="center">
