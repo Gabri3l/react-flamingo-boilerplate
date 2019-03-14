@@ -1,0 +1,7 @@
+/node_modules
+/public
+/dist
+stats.json
+.env
+server/react-loadable.json
+/.vscode

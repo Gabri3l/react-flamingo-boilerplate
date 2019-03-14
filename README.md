@@ -3,7 +3,6 @@
 - [ ] Extract a client-side only rendered boilerplate
 - [ ] Add Netlify instructions to ship
 
-
 <p align="center">
   <img width="200" src="http://i63.tinypic.com/et7ji1.jpg" alt="redux-firenze-logo">
   <h1 align="center">React Firenze Boilerplate (Core)</h1>

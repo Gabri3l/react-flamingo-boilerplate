@@ -1,0 +1,41 @@
+{
+  "presets": [
+    "@babel/react",
+    [
+      "@babel/env",
+      {
+        "targets": {
+          "browsers": "> 1%, last 2 versions"
+        },
+        "loose": true,
+        "modules": false
+      }
+    ]
+  ],
+  "plugins": [
+    "emotion",
+    "@react-firenze/react-loadable/babel",
+    "@babel/plugin-proposal-object-rest-spread",
+    "@babel/plugin-transform-destructuring",
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-proposal-optional-chaining",
+    "@babel/plugin-syntax-dynamic-import",
+    "@babel/plugin-syntax-import-meta"
+  ],
+  "env": {
+    "test": {
+      "presets": [
+        "@babel/react"
+      ],
+      "plugins": [
+        "@babel/plugin-transform-modules-commonjs"
+      ]
+    },
+    "server": {
+      "plugins": [
+        "emotion",
+        "@babel/plugin-transform-modules-commonjs"
+      ]
+    }
+  }
+}
