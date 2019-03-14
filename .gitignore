@@ -1,6 +1,6 @@
 /node_modules
 /public
-/dist/*.*
+/dist
 stats.json
 .env
 server/react-loadable.json
